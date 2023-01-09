@@ -22,14 +22,4 @@ export class MainComponentComponent implements OnInit {
     this.api.getAllCards().subscribe(cards => this.deck = cards);
   }
 
-  addToSelectedCards(card: Card) : void {
-    if (this.selectedCards.length < 6) {
-      
-    }
-  }
-
-  removeFromSelectedCards(card: Card) : void {
-    
-  }
-
 }
