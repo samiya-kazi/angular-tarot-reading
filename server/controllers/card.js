@@ -1,4 +1,5 @@
 const cardModel = require("../models/card");
+const path = require('path');
 
 async function getAllCards (req, res) {
   try {
@@ -25,4 +26,26 @@ async function getOneCard (req, res) {
 }
 
 
-module.exports = { getAllCards, getOneCard }
+async function getCardImage (req, res) {
+  try {
+    const { img } = req.params;
+    const imgPath = './lib/card-images/' + img;
+    const options = {
+      root: path.join(__dirname, '../'),
+      dotfiles: 'deny',
+      headers: {
+        'x-timestamp': Date.now(),
+        'x-sent': true
+      }
+    }
+    res.status(200);
+    res.setHeader('content-type', 'image/jpeg');
+    res.sendFile(imgPath, options);
+  } catch (error) {
+    res.status(500);
+    console.log(error);
+  }
+}
+
+
+module.exports = { getAllCards, getOneCard, getCardImage }

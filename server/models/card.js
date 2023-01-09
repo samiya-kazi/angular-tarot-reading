@@ -1,6 +1,8 @@
 const { ObjectId } = require('mongodb');
 require('dotenv').config();
 const collection = require('./index').db(process.env.DB_NAME).collection('cards');
+const fs = require('fs');
+const path = require('path');
 
 async function getAll () {
   try {
@@ -21,5 +23,6 @@ async function getOne (id) {
     console.log(error);
   }
 }
+
 
 module.exports = { getAll, getOne };
