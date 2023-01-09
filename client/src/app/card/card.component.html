@@ -1,1 +1,9 @@
-<p>card works!</p>
+<div *ngIf="face else back">  
+  <img src={{cardImgRoot}}{{card.img}} (click)='handleSelect()' [class.selected]="selected"/>
+</div>
+
+<ng-template #back>
+  <img src={{cardBackImgPath}} (click)='handleSelect()' [class.selected]="selected"/>
+</ng-template>
+
+

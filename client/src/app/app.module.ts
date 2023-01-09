@@ -7,6 +7,7 @@ import { CardSelectionComponent } from './card-selection/card-selection.componen
 import { CardComponent } from './card/card.component';
 import { CardReadingComponent } from './card-reading/card-reading.component';
 import { MainComponentComponent } from './main-component/main-component.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { MainComponentComponent } from './main-component/main-component.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

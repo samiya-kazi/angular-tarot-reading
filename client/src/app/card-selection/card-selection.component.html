@@ -1,1 +1,7 @@
-<p>card-selection works!</p>
+<h2>Number of cards selected: {{selectedCards.length}} / 6</h2>
+<div class="card-selection-container">
+  <div *ngFor="let card of deck">
+    <app-card [card]="card" [selected]="selectedCards.includes(card)" (selectCardEvent)="handleSelect($event)"></app-card>
+  </div>
+</div>
+<button [disabled]="selectedCards.length < 6">See Fortune</button>

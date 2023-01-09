@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiClientService } from '../api-client.service';
+import { Card } from '../card';
 
 @Component({
   selector: 'app-main-component',
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponentComponent implements OnInit {
 
-  constructor() { }
+  deck : Card[] = [];
+  selectedCards : Card[] = [];
+
+  constructor(private api : ApiClientService) { }
 
   ngOnInit(): void {
+    this.getCards();
+  }
+
+  getCards () : void {
+    this.api.getAllCards().subscribe(cards => this.deck = cards);
+  }
+
+  addToSelectedCards(card: Card) : void {
+    if (this.selectedCards.length < 6) {
+      
+    }
+  }
+
+  removeFromSelectedCards(card: Card) : void {
+    
   }
 
 }

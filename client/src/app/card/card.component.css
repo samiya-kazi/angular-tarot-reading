@@ -1,0 +1,7 @@
+img {
+  height: 300px;
+}
+
+.selected {
+  border: 5px purple solid;
+}
