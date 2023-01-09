@@ -12,6 +12,7 @@ export class CardSelectionComponent implements OnInit {
   @Input() selectedCards!: Card[]
   @Output() showFortuneEvent = new EventEmitter()
   @Output() changeSelectedEvent = new EventEmitter()
+  @Output() shuffleEvent = new EventEmitter()
 
   constructor() { }
 
@@ -35,5 +36,9 @@ export class CardSelectionComponent implements OnInit {
 
   showFortune() {
     this.showFortuneEvent.emit(true);
+  }
+
+  shuffleCards () {
+    this.shuffleEvent.emit();
   }
 }

@@ -20,7 +20,7 @@ export class MainComponentComponent implements OnInit {
   }
 
   getCards () : void {
-    this.api.getAllCards().subscribe(cards => this.deck = cards);
+    this.api.getAllCards().subscribe(cards => this.deck = this.shuffle(cards));
   }
 
   fortuneViewChange (state: Boolean) : void {
@@ -30,6 +30,29 @@ export class MainComponentComponent implements OnInit {
 
   changeSelectedCards (newList : Card[]) {
     this.selectedCards = newList;
+  }
+
+  shuffleCards () {
+    this.deck = this.shuffle(this.deck);
+  }
+
+  shuffle (cards : Card[]) {
+    const array = [...cards];
+    let currentIndex = array.length,  randomIndex;
+  
+    // While there remain elements to shuffle.
+    while (currentIndex != 0) {
+  
+      // Pick a remaining element.
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+  
+    return array;
   }
 
 }

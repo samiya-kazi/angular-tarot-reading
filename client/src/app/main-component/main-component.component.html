@@ -3,5 +3,11 @@
 </div>
 
 <ng-template #showDeck>
-  <app-card-selection [deck]="deck" [selectedCards]="selectedCards" (showFortuneEvent)="fortuneViewChange($event)" (changeSelectedEvent)="changeSelectedCards($event)"></app-card-selection>
+  <app-card-selection 
+    [deck]="deck" 
+    [selectedCards]="selectedCards" 
+    (showFortuneEvent)="fortuneViewChange($event)" 
+    (changeSelectedEvent)="changeSelectedCards($event)"
+    (shuffleEvent)="shuffleCards()"
+  ></app-card-selection>
 </ng-template>

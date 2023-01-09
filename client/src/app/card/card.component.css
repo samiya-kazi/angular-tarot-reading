@@ -1,5 +1,6 @@
 img {
   height: 300px;
+  border: 5px transparent solid;
 }
 
 .selected {

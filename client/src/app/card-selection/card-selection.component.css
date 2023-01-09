@@ -1,3 +1,8 @@
 .card-selection-container {
   display: flex;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 1rem;
 }
