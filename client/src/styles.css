@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  text-align: center;
+  font-family: 'Trebuchet MS', sans-serif;
+  margin: 0;
+  background: rgb(214,132,244);
+  background: linear-gradient(90deg, rgba(214,132,244,1) 0%, rgba(210,142,231,1) 35%, rgba(170,207,254,1) 100%);
+}
+
+h1 {
+  /* font-family: 'Brush Script MT', 'Brush Script Std', 'cursive'; */
+  margin: 0;
+  padding: 20px;
+  background-color: darkslateblue;
+  color: white;
+}
+
+button {
+  margin: 20px;
+  border-radius: 10px;
+  padding: 1rem;
+  color: white;
+  background-color: darkslateblue;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
+
+button:disabled {
+  color: black;
+  background-color: grey;
+  cursor: auto;
+}
+
+button:hover {
+  background-color: rgb(54, 46, 104);
+}
+
+button:disabled:hover {
+  background-color: grey;
+}

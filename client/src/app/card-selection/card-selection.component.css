@@ -1,8 +1,33 @@
 .card-selection-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
-button {
-  padding: 1rem;
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 97vw;
+  justify-content: center;
+}
+
+.container > * {
+  text-align: center;
+}
+
+p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: blinker 1.5s infinite;
+}
+
+@keyframes blinker {
+  60% {
+    opacity: 0.2;
+  }
+}
+
+img {
+  height: 50px;
 }

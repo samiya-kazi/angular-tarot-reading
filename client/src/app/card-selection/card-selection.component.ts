@@ -8,6 +8,8 @@ import { Card } from '../card';
 })
 export class CardSelectionComponent implements OnInit {
 
+  shuffling : Boolean = false;
+
   @Input() deck!: Card[]
   @Input() selectedCards!: Card[]
   @Output() showFortuneEvent = new EventEmitter()
@@ -40,5 +42,7 @@ export class CardSelectionComponent implements OnInit {
 
   shuffleCards () {
     this.shuffleEvent.emit();
+    this.shuffling = true;
+    setTimeout(() => this.shuffling = false, 3000);
   }
 }

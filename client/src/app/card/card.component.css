@@ -4,5 +4,9 @@ img {
 }
 
 .selected {
-  border: 5px purple solid;
+  border: 5px purple double;
+}
+
+img:hover {
+  scale: 1.05;
 }

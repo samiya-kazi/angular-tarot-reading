@@ -1,8 +1,13 @@
-<h2>Number of cards selected: {{selectedCards.length}} / 6</h2>
-<button (click)="shuffleCards()">Shuffle</button>
-<button [disabled]="selectedCards.length < 6" (click)="showFortune()">See Fortune</button>
-<div class="card-selection-container">
-  <div *ngFor="let card of deck">
-    <app-card [card]="card" [selected]="selectedCards.includes(card)" (selectCardEvent)="handleSelect($event)"></app-card>
+<div class="container">
+  <h2>Number of cards selected: {{selectedCards.length}} / 6</h2>
+  <div>
+    <button (click)="shuffleCards()">Shuffle</button>
+    <button [disabled]="selectedCards.length < 6" (click)="showFortune()">See Fortune</button>
+  </div>
+  <p *ngIf="shuffling"><span><img src="http://localhost:3000/cards/image/shuffle.gif"/></span>Shuffling...</p>
+  <div class="card-selection-container">
+    <div *ngFor="let card of deck">
+      <app-card [card]="card" [selected]="selectedCards.includes(card)" (selectCardEvent)="handleSelect($event)"></app-card>
+    </div>
   </div>
 </div>
