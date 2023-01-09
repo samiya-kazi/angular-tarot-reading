@@ -15,4 +15,8 @@ export class ApiClientService {
   getAllCards() : Observable<Card[]> {
     return this.http.get<Card[]>(this.rootUrl);
   }
+
+  getCardInfo(id: String) : Observable<Card> {
+    return this.http.get<Card>(this.rootUrl + '/' + id);
+  }
 }

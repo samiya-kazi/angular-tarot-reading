@@ -1,1 +1,7 @@
-<app-card-selection [deck]="deck" [selectedCards]="selectedCards"></app-card-selection>
+<div *ngIf="fortuneView else showDeck">
+  <app-card-reading [selectedCards]="selectedCards" (resetEvent)="fortuneViewChange($event)"></app-card-reading>
+</div>
+
+<ng-template #showDeck>
+  <app-card-selection [deck]="deck" [selectedCards]="selectedCards" (showFortuneEvent)="fortuneViewChange($event)" (changeSelectedEvent)="changeSelectedCards($event)"></app-card-selection>
+</ng-template>

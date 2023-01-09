@@ -4,4 +4,4 @@
     <app-card [card]="card" [selected]="selectedCards.includes(card)" (selectCardEvent)="handleSelect($event)"></app-card>
   </div>
 </div>
-<button [disabled]="selectedCards.length < 6">See Fortune</button>
+<button [disabled]="selectedCards.length < 6" (click)="showFortune()">See Fortune</button>

@@ -11,6 +11,7 @@ export class MainComponentComponent implements OnInit {
 
   deck : Card[] = [];
   selectedCards : Card[] = [];
+  fortuneView : Boolean = false;
 
   constructor(private api : ApiClientService) { }
 
@@ -20,6 +21,15 @@ export class MainComponentComponent implements OnInit {
 
   getCards () : void {
     this.api.getAllCards().subscribe(cards => this.deck = cards);
+  }
+
+  fortuneViewChange (state: Boolean) : void {
+    this.fortuneView = state;
+    if (!this.fortuneView) this.selectedCards = [];
+  }
+
+  changeSelectedCards (newList : Card[]) {
+    this.selectedCards = newList;
   }
 
 }

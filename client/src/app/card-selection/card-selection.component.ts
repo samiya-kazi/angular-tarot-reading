@@ -1,4 +1,4 @@
-import { Component, OnInit, Input  } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter  } from '@angular/core';
 import { Card } from '../card';
 
 @Component({
@@ -10,6 +10,8 @@ export class CardSelectionComponent implements OnInit {
 
   @Input() deck!: Card[]
   @Input() selectedCards!: Card[]
+  @Output() showFortuneEvent = new EventEmitter()
+  @Output() changeSelectedEvent = new EventEmitter()
 
   constructor() { }
 
@@ -21,13 +23,17 @@ export class CardSelectionComponent implements OnInit {
 
     if(index >= 0) {
       const newList = this.selectedCards.filter(c => card !== c);
-      this.selectedCards = newList
+      // this.selectedCards = newList
+      this.changeSelectedEvent.emit(newList);
     } else {
       if (this.selectedCards.length < 6) {
         const newList = [...this.selectedCards, card];
-        this.selectedCards = newList
+        this.changeSelectedEvent.emit(newList);
       }
     }
   }
 
+  showFortune() {
+    this.showFortuneEvent.emit(true);
+  }
 }

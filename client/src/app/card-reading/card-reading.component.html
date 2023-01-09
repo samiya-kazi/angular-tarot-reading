@@ -1,1 +1,25 @@
-<p>card-reading works!</p>
+<h2>Your Fortune</h2>
+<div>
+  <table>
+    <tr>
+      <th>Card</th>
+      <th>Name</th>
+      <th>Fortune</th>
+    </tr>
+    
+    <tr *ngFor="let card of selectedCards">
+      <td>
+        <app-card [card]="card" [face]="faceUp"></app-card>
+      </td>
+      <td>
+        <p>{{card.name}}</p>
+      </td>
+      <td *ngIf="cardInfo[card._id]"> 
+        <p *ngFor="let reading of cardInfo[card._id].fortune_telling">
+          {{reading}}
+        </p>
+      </td>
+    </tr>
+  </table>
+</div>
+<button (click)="handleReset()">Try Again</button>
