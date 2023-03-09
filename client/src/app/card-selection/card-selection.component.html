@@ -6,7 +6,7 @@
   </div>
   <p *ngIf="shuffling"><span><img src="http://localhost:3000/cards/image/shuffle.gif"/></span>Shuffling...</p>
   <div class="card-selection-container">
-    <div *ngFor="let card of deck">
+    <div *ngFor="let card of deck" class="card">
       <app-card [card]="card" [selected]="selectedCards.includes(card)" (selectCardEvent)="handleSelect($event)"></app-card>
     </div>
   </div>

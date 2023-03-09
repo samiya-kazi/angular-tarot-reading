@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+table {
+  max-width: 80vw;
+}
+
+th {
+  font-size: large;
+}
+
+
+td {
+  border: black solid 1px;
+  padding: 10px;
+}
